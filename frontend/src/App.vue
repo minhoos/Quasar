@@ -1,14 +1,27 @@
 <template>
+  <header>
+    <ul>
+      <li>
+        <RouterLink to="/">Home</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/prime">PrimeVue</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/quasar">Quasar</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/vuetify">Vuetify</RouterLink>
+      </li>
+    </ul>
+  </header>
   <main>
-    <h1>Playground</h1>
-    <input v-model="msg" />
-    <p>{{ msg }}</p>
+    <RouterView></RouterView>
   </main>
 </template>
 
 <script setup>
-  import { ref } from 'vue';
-  const msg = ref('');
+
 </script>
 
 <style scoped>

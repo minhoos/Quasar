@@ -1,12 +1,12 @@
 import { createApp } from 'vue';
 import App from './App.vue'
-import PrimeVue from 'primevue/config';
-import Aura from '@primevue/themes/aura';
+import router from './router/index.js';
+import createVuetify  from "./plugins/vuetify.ts";
+
 
 const app = createApp(App);
-app.use(PrimeVue, {
-  theme: {
-    preset: Aura,
-  },
-});
+
+app.use(router)
+app.use(createVuetify)
+
 app.mount('#app');
