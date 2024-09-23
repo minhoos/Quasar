@@ -1,12 +1,12 @@
-import { createApp } from 'vue';
-import App from './App.vue'
-import PrimeVue from 'primevue/config';
-import Aura from '@primevue/themes/aura';
+import { createApp } from 'vue'
+import { Quasar } from 'quasar'
+import quasarLang from 'quasar/lang/ko-KR'
 
-const app = createApp(App);
-app.use(PrimeVue, {
-  theme: {
-    preset: Aura,
-  },
-});
-app.mount('#app');
+import App from './App.vue'
+
+const app = createApp(App)
+app.use(Quasar, {
+  plugins: {}, // import Quasar plugins and add here
+  lang: quasarLang,
+})
+app.mount('#app')
