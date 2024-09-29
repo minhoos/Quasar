@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import { Quasar } from 'quasar'
 import quasarLang from 'quasar/lang/ko-KR'
-
+import 'quasar/src/css/index.sass'
 import App from './App.vue'
 
 const app = createApp(App)

@@ -1,4 +1,12 @@
-@import 'quasar/src/css/index.sass';
+// src/css/quasar.variables.scss
+@charset "UTF-8";
+
+// setting
+@import "setting/font-family";
+@import "setting/vars";
+// @import "setting/reset";
+// @import "setting/mixin";
+// @import "setting/common";
 
 $primary   : #1976D2;
 $secondary : #26A69A;

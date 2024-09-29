@@ -18,6 +18,12 @@ export default defineConfig({
       '@': resolve(__dirname, 'src'),  // '@'를 src 폴더로 매핑
     }
   },
+  server:{
+    watch:{
+      // 소스 수정되었을때 바로 반영되도록 적용
+      usePolling:true,
+    }
+  },
   css :{
     preprocessorOptions : {
       scss: {
