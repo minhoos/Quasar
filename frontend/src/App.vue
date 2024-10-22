@@ -1,35 +1,20 @@
 <template>
-  <div id="app">
-    <q-layout view="lHh Lpr lFf" class="bg-white">
-      <q-header elevated>
-        <q-toolbar>
-          <!-- <q-btn flat dense round @click="toggleLeftDrawer" aria-label="Menu" icon="menu" /> -->
-
-          <q-toolbar-title>
-            Quasar App 프리텐다드
-          </q-toolbar-title>
-        </q-toolbar>
-      </q-header>
-
-      <q-page-container>
-        <router-view />
-      </q-page-container>
-    </q-layout>
-  </div>
+  <RouterView></RouterView>
+  <!-- <q-layout view="lHh Lpr lFf" class="bg-gray1">
+    <q-page-container>
+      <q-page>
+      </q-page>
+    </q-page-container>
+  </q-layout> -->
 </template>
 
 <script setup>
-import { ref } from 'vue'
 
-const leftDrawerOpen = ref(false)
+// import TheHeader from './layout/TheHeader.vue';
+// import TheSidebar from './layout/TheSidebar.vue';
 
-const toggleLeftDrawer = () => {
-  leftDrawerOpen.value = !leftDrawerOpen.value
-}
 </script>
 
-<style scoped lang="scss">
-#app {
-  font-family: var(----mainfont-pretendard), 'sans-serif';
-}
+<style lang="scss" scoped>
+
 </style>

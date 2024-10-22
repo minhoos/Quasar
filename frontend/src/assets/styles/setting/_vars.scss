@@ -2,8 +2,10 @@
 :root{
   --mainfont-pretendard:"Pretendard"
   font-family:var(----mainfont-pretendard);
-  font-size:1.6rem;
-  line-height:1.5;
+  // font-size:1.6rem;
+  // line-height:1.5;
   font-weight:400;
-  letter-spacing: -2%;
+  --common-black: #181818;
+  --common-white:#fff;
+  --common-gray1:#f1f2f6;
 }

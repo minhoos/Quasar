@@ -2,8 +2,11 @@
 @charset "UTF-8";
 
 // setting
-@import "setting/font-family";
+@import "setting/reset";
 @import "setting/vars";
+@import "setting/font-family";
+@import "setting/common";
+
 // @import "setting/reset";
 // @import "setting/mixin";
 // @import "setting/common";
@@ -12,7 +15,7 @@ $primary   : #1976D2;
 $secondary : #26A69A;
 $accent    : #9C27B0;
 
-$dark      : #1D1D1D;
+$dark      : #181818;
 
 $positive  : #21BA45;
 $negative  : #C10015;
