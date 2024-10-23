@@ -1,9 +1,12 @@
 // HTML 최상위 요소, 전역범위의 CSS 변수를 정의하고 접근 가능
-:root{
-  --mainfont-pretendard:"Pretendard"
-  font-family:var(----mainfont-pretendard);
+:root {
+  --mainfont-pretendard: "Pretendard"
+    font-family:var(----mainfont-pretendard);
   // font-size:1.6rem;
-  line-height:1.5;
-  font-weight:400;
-  // letter-spacing: -2%;
+  // line-height:1.5;
+  font-weight: 400;
+  --common-black: #181818;
+  --common-white: #fff;
+  --common-grey1: #f1f2f6;
+  --common-grey6: #112232;
 }

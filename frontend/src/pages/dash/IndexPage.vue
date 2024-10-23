@@ -1,8 +1,8 @@
 <template>
-  <q-layout view="lHh Lpr lFf" class="bg-white">
+  <q-layout view="lHh Lpr lFf">
     <TheSidebar></TheSidebar>
     <q-page-container>
-      <q-page>
+      <q-page class="q-pa-md">
         <router-view></router-view>
       </q-page>
     </q-page-container>

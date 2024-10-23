@@ -1,7 +1,7 @@
 <template>
   <q-drawer v-model="drawer" show-if-above :width="335" :breakpoint=0
     style="border-right: 1px solid #ddd; padding:8px;">
-    <div style="padding:8px 16px; height:92px; display:flex; justify-content: center; align-items: center;">
+    <div style="padding:8px 16px; height:92px;" >
       <a href=" /" class="row justify-center items-center no-wrap cursor-pointer" style="padding:16px 0;">
         <img class="doc-header__logo-text" src="https://nlobby.com/theme/basic/img/nlobby/logo.png" alt="nlobby Logo">
       </a>
