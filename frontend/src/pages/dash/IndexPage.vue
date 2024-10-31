@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <TheSidebar></TheSidebar>
+    <TheSidebar v-if="$q.screen.gt.sm"></TheSidebar>
     <q-page-container>
       <q-page class="q-pa-md">
         <router-view></router-view>

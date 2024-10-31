@@ -5,7 +5,7 @@ import DashPage from 'pages/dash/IndexPage.vue'
 import LoginPage from "pages/login/IndexPage.vue";
 
 const routes = [
-  { 
+  {
     path: "/login",
     name: "login",
     component: LoginPage

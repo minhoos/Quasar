@@ -4,3 +4,12 @@
 @import "setting/vars";
 @import "setting/font-family";
 @import "setting/common";
+
+body.body--light {
+  color:var(--common-black);
+}
+
+body.body--dark {
+  color: var(--common-white);
+  --q-primary:var(--common-positive);
+}

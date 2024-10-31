@@ -10,34 +10,11 @@
 html {
   font-size: 62.5%;
   body {
-    font-size: 1.6rem;
-    line-height: 24px;
-    font-family:'Pretendard';
+    letter-spacing: -0.6px;
   }
 
   * {
     margin: 0;
     padding: 0;
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    div,
-    strong,
-    span,
-    button,
-    a,
-    ul,
-    li,
-    i,
-    td,
-    th {
-      letter-spacing: -0.6px;
-      color: var(--common-black);
-    }
   }
 }

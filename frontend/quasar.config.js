@@ -21,7 +21,10 @@ module.exports = configure(function (/* ctx */) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
-    boot: [],
+    boot: [
+      'initialization'
+      // 'brand-colors'
+    ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
     css: ["app.scss"],
@@ -45,6 +48,7 @@ module.exports = configure(function (/* ctx */) {
       alias: {
         "layout": path.join(__dirname, "./src/layout"),
         "css": path.join(__dirname, "./src/css"),
+        "assets": path.join(__dirname, "./src/assets"),
       },
       target: {
         browser: ["es2019", "edge88", "firefox78", "chrome87", "safari13.1"],
@@ -52,9 +56,9 @@ module.exports = configure(function (/* ctx */) {
       },
 
       vueRouterMode: "hash", // available values: 'hash', 'history'
-      // vueRouterBase,
-      // vueDevtools,
-      // vueOptionsAPI: false,
+      // vueRouterBase,  // 기본경로 설정
+      vueDevtools: true,  // 개발도구 활성화
+      // vueOptionsAPI: false,  // Option Api 사용여부
 
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
 
@@ -92,7 +96,12 @@ module.exports = configure(function (/* ctx */) {
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
     framework: {
-      config: {},
+      cssAddon: true,
+      config: {
+        screen: {
+          bodyClasses: true // <<< add this
+        },
+      },
 
       // iconSet: 'material-icons', // Quasar icon set
       // lang: 'en-US', // Quasar language pack
@@ -105,7 +114,10 @@ module.exports = configure(function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: [],
+      plugins: [
+        'LocalStorage',
+        'SessionStorage'
+      ],
     },
 
     // animations: 'all', // --- includes all animations
