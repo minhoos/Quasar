@@ -3,7 +3,9 @@
     <TheSidebar v-if="$q.screen.gt.sm"></TheSidebar>
     <q-page-container>
       <q-page class="q-pa-md">
-        <router-view></router-view>
+        <section class="q-mb-xl">
+          <router-view></router-view>
+        </section>
       </q-page>
     </q-page-container>
   </q-layout>

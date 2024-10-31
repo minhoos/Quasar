@@ -6,24 +6,29 @@ import LoginPage from "pages/login/IndexPage.vue";
 
 const routes = [
   {
-    path: "/login",
-    name: "login",
-    component: LoginPage
+    path: '/login',
+    name: 'login',
+    component: LoginPage,
   },
   {
-    path: "/dash",
-    redirect: "/dash/home",
+    path: '/dash',
+    redirect: '/dash/home',
     component: DashPage,
     children: [
       {
-        path: "home",
-        name: "홈",
-        component: () => import("pages/dash/home/IndexPage.vue"),
+        path: 'home',
+        name: '홈',
+        component: () => import('pages/dash/home/IndexPage.vue'),
       },
       {
-        path: "client",
-        name: "고객사 관리",
-        component: () => import("pages/dash/client/IndexPage.vue"),
+        path: 'client',
+        name: '고객사 관리',
+        component: () => import('pages/dash/client/IndexPage.vue'),
+      },
+      {
+        path: 'licence',
+        name: '라이선스 관리',
+        component: () => import('pages/dash/licence/IndexPage.vue'),
       },
     ],
   },

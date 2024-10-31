@@ -57,7 +57,7 @@ module.exports = configure(function (/* ctx */) {
 
       vueRouterMode: "hash", // available values: 'hash', 'history'
       // vueRouterBase,  // 기본경로 설정
-      vueDevtools: true,  // 개발도구 활성화
+      vueDevtools: false,  // 개발도구 활성화
       // vueOptionsAPI: false,  // Option Api 사용여부
 
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup

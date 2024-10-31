@@ -35,11 +35,11 @@
             </path>
           </svg>
           <q-item-section>
-            고객사현황
+            고객사관리
           </q-item-section>
         </q-item>
 
-        <q-item clickable v-ripple class="side-menu">
+        <q-item clickable v-ripple class="side-menu" active-class="text-primary" to="/dash/licence">
           <!-- <q-item-section avatar>
             <q-icon name="send" />
           </q-item-section> -->
@@ -51,7 +51,7 @@
             </path>
           </svg>
           <q-item-section>
-            라이센스현황
+            라이센스 관리
           </q-item-section>
         </q-item>
 
@@ -67,9 +67,8 @@
       </q-list>
     </q-scroll-area>
     <div>
-      <q-btn style="width:100%;">
+      <q-btn flat class="full-width ">
         <svg aria-label="설정" class="" height="24" role="img" viewBox="0 0 24 24" width="24">
-          <title>설정</title>
           <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             x1="3" x2="21" y1="4" y2="4"></line>
           <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -78,9 +77,9 @@
             x1="3" x2="21" y1="20" y2="20"></line>
         </svg>
         <span class="q-ml-sm">더 보기</span>
-        <q-menu fit anchor="top end" self="bottom end">
-          <q-list style="min-width: 100px">
-            <q-btn clickable @click.prevent="toggleDarkMode">
+        <q-menu anchor="top end" self="bottom end" class="shadow-0">
+          <q-list>
+            <q-btn flat @click.prevent="toggleDarkMode" class="full-width">
               <q-icon :name="darkMode ? 'dark_mode' : 'light_mode'" />
               <q-toggle v-model="darkMode" label="다크모드"/>
             </q-btn>
