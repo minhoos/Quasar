@@ -32,7 +32,7 @@ $warning   : #F2C037;
 // !default : SCSS에서 속성값이 정의되지 않은 변수의 초기값을 선언해준다.
 $body-font-size : 1.6rem;
 $body-line-height : 1.5;
-$typography-font-family:'Pretendard';
+$typography-font-family:'NanumSquareNeo';
 
 
 $h1:        (size: 6rem,     line-height: 6rem,      weight: 300);
@@ -47,3 +47,6 @@ $body1:     (size: 1.6rem,     line-height: 1.5rem,    weight: 300);
 $body2:     (size: 1.4rem,  line-height: 1.4rem,   weight: 300);
 $overline:  (size: .75rem,   line-height: 2rem,      weight: 500);
 $caption:   (size: 1.2rem,   line-height: 1.25rem,   weight: 400);
+
+// shadow
+$shadow-common : 0 4px 12px rgba(18, 18, 18, .15)

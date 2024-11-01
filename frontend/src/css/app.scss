@@ -13,3 +13,8 @@ body.body--dark {
   color: var(--common-white);
   --q-primary:var(--common-positive);
 }
+
+
+.shadow-all{
+  box-shadow: $shadow-common;
+}
