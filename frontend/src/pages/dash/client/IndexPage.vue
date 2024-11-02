@@ -2,7 +2,33 @@
   <div class="q-pa-md q-pa-md-xl column items-start q-gutter-md">
     <h4 class="text-h3 text-weight-bold block">고객사 관리</h4>
     <section class="q-mb-xl">
-      <div class="text-h4">Toolbar</div>
+      <div class="text-h4">Flexbox - Col</div>
+      <q-separator class="q-my-md" />
+      <div class="bg-yellow">
+        <div class="q-gutter-x-md">
+          <div v-for="list in 4" :key="list" class="square"></div>
+        </div>
+        <div class="q-gutter-y-md">
+          <div v-for="list in 4" :key="list" class="bg-primary">{{ list }}</div>
+        </div>
+      </div>
+      <q-separator class="q-my-md" spaced/>
+      <div class="bg-yellow">
+        <div class="row q-col-gutter-md">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3" v-for="list in 8" :key="list">
+            <q-card class="my-card">
+              <q-img src="https://cdn.quasar.dev/img/parallax2.jpg">
+                <div class="absolute-bottom text-subtitle2 text-center">
+                  Title
+                </div>
+              </q-img>
+            </q-card>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="q-mb-xl">
+      <div class="text-h4">Flexbox - Col</div>
       <q-separator class="q-my-md" />
       <div class="row">
         <!-- 퀘이사는 12컬림을 사용하고 있으므로 col 컬럼의 합이 12를 넘지 않게 레이아웃을 짜도록 한다. -->
@@ -110,7 +136,7 @@
   .square{
     width:80px;
     height:80px;
-    background:$primary;
+    background:var(--q-primary);
     border:1px solid #181818;
     display:inline-block;
     font-weight: 900;
@@ -118,7 +144,7 @@
   }
 
   .border{
-    border:1px solid $primary;
+    border:1px solid var(--q-primary);
     padding:8px;
   }
 </style>

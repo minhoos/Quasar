@@ -19,7 +19,7 @@
             </path>
           </svg>
           <q-item-section>
-            홈
+            대시보드
           </q-item-section>
         </q-item>
 

@@ -12,6 +12,9 @@ body.body--light {
 body.body--dark {
   color: var(--common-white);
   --q-primary:var(--common-positive);
+  .text-brand-black{
+    color: var(--common-white);
+  }
 }
 
 

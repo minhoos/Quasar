@@ -36,17 +36,18 @@ $typography-font-family:'NanumSquareNeo';
 
 
 $h1:        (size: 6rem,     line-height: 6rem,      weight: 300);
-$h2:        (size: 3.75rem,  line-height: 3.75rem,   weight: 300);
-$h3:        (size: 3rem,     line-height: 3.125rem,    weight: 400);
+$h2:        (size: 3.6rem,  line-height: 3.6rem,   weight: 300);
+$h3:        (size: 3.2rem,     line-height: 3.2rem,    weight: 400);
 $h4:        (size: 2.8rem, line-height: 2.5rem,    weight: 400);
 $h5:        (size: 2.4rem,   line-height: 2rem,        weight: 400);
 $h6:        (size: 2.0rem,  line-height: 2rem,       weight: 400);
 $subtitle1: (size: 2.4rem,     line-height: 2.4rem,   weight: 600);
 $subtitle2: (size: 2.0rem,  line-height: 2.0rem,  weight: 400);
-$body1:     (size: 1.6rem,     line-height: 1.5rem,    weight: 300);
+$body1:     (size: 1.6rem,     line-height: 1.6rem,    weight: 300);
 $body2:     (size: 1.4rem,  line-height: 1.4rem,   weight: 300);
 $overline:  (size: .75rem,   line-height: 2rem,      weight: 500);
 $caption:   (size: 1.2rem,   line-height: 1.25rem,   weight: 400);
 
 // shadow
-$shadow-common : 0 4px 12px rgba(18, 18, 18, .15)
+$shadow-common : 0 4px 12px rgba(18, 18, 18, .15);
+$black:#181818;
