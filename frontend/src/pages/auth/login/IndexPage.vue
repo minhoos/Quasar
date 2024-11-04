@@ -1,8 +1,6 @@
 <template>
   <div>
-    <q-layout view="lHh Lpr lFf" class="bg-white">
-      로그인
-    </q-layout>
+    로그인
   </div>
 </template>
 

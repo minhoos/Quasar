@@ -7,49 +7,95 @@
         <p class="q-mb-sm">2024년 11월 2일 토요일</p>
         <h4 class="text-h4">이민호 님 안녕하세요.</h4>
       </div>
-      <div>
-        <h5 class="text-h5">고객사 현황</h5>
-        <q-separator class="q-my-md"/>
-        <div class="row q-col-gutter-y-md q-col-gutter-x-xl q-mt-xs">
-          <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-            <q-card class="count-card text-center q-py-lg flex column shadow-all">
-              <div class="text-subtitle2">
-                스탠다드
-              </div>
-              <p class="text-h2" style="font-weight:200;">
-                19
-              </p>
-            </q-card>
+      <div class="row column q-gutter-md">
+        <div>
+          <h5 class="text-h5">고객사 현황</h5>
+          <q-separator class="q-my-md"/>
+          <div class="row q-col-gutter-y-md q-col-gutter-x-xl q-mt-xs">
+            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+              <q-card class="count-card text-center q-py-lg flex column shadow-all">
+                <h4 class="text-subtitle2">
+                  스탠다드
+                </h4>
+                <p class="text-h2" style="font-weight:200;">
+                  19
+                </p>
+              </q-card>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+              <q-card class="count-card text-center q-py-lg flex column shadow-all">
+                <h4 class="text-subtitle2">
+                  프리미엄
+                </h4>
+                <p class="text-h2" style="font-weight:200;">
+                  45
+                </p>
+              </q-card>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+              <q-card class="count-card text-center q-py-lg flex column shadow-all">
+                <h4 class="text-subtitle2">
+                  엔터프라이즈
+                </h4>
+                <p class="text-h2" style="font-weight:200;">
+                  15
+                </p>
+              </q-card>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+              <q-card class="count-card text-center q-py-lg flex column shadow-all">
+                <h4 class="text-subtitle2">
+                  TOTAL
+                </h4>
+                <p class="text-h2" style="font-weight:200;">
+                  79
+                </p>
+              </q-card>
+            </div>
           </div>
-          <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-            <q-card class="count-card text-center q-py-lg flex column shadow-all">
-              <div class="text-subtitle2">
-                프리미엄
-              </div>
-              <p class="text-h2" style="font-weight:200;">
-                45
-              </p>
-            </q-card>
+        </div>
+        <div>
+          <h5 class="text-h5">신규 고객사</h5>
+          <q-separator class="q-my-md"/>
+          <div class="row q-col-gutter-y-md q-col-gutter-x-xl q-mt-xs">
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"  v-for="list in 3" :key="list">
+              <q-card class="count-card text-left q-pa-md flex column shadow-all">
+                <div class="flex justify-center items-center q-gutter-md">
+                  <img class="content_logo" src="https://nlobby.com/theme/basic/img/nlobby/logo.png" alt="Logo">
+                  <div class="flex column q-gutter-sm">
+                    <h4 class="text-subtitle2">
+                      텐엑스타워<br>
+                      <span class="text-body2 q-mt-sm q-pa-xs inline-block bg-primary text-white rounded-borders">클라우드</span>
+                    </h4>
+                    <p class="text-body2 text-black" style="font-weight:200;">
+                      2024. 11. 04 등록
+                    </p>
+                  </div>
+                </div>
+              </q-card>
+            </div>
           </div>
-          <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-            <q-card class="count-card text-center q-py-lg flex column shadow-all">
-              <div class="text-subtitle2">
-                엔터프라이즈
-              </div>
-              <p class="text-h2" style="font-weight:200;">
-                15
-              </p>
-            </q-card>
-          </div>
-          <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-            <q-card class="count-card text-center q-py-lg flex column shadow-all">
-              <div class="text-subtitle2">
-                TOTAL
-              </div>
-              <p class="text-h2" style="font-weight:200;">
-                79
-              </p>
-            </q-card>
+        </div>
+        <div>
+          <h5 class="text-h5">계약 갱신 임박 고객사</h5>
+          <q-separator class="q-my-md"/>
+          <div class="row q-col-gutter-y-md q-col-gutter-x-xl q-mt-xs">
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"  v-for="list in 3" :key="list">
+              <q-card class="count-card text-left q-pa-md flex column shadow-all">
+                <div class="flex justify-center items-center q-gutter-md">
+                  <img class="content_logo" src="https://nlobby.com/theme/basic/img/nlobby/logo.png" alt="Logo">
+                  <div class="flex column q-gutter-sm">
+                    <h4 class="text-subtitle2">
+                      한국로봇산업진흥원<br>
+                      <span class="text-body2 q-mt-sm q-pa-xs inline-block bg-primary text-white rounded-borders">클라우드</span>
+                    </h4>
+                    <p class="text-body2 text-black" style="font-weight:200;">
+                      2024. 11. 04 종료예정
+                    </p>
+                  </div>
+                </div>
+              </q-card>
+            </div>
           </div>
         </div>
       </div>
@@ -105,6 +151,13 @@
   .count-card{
     border-radius:16px;
     gap:16px;
+    .content_logo{
+      width:100px;
+    }
+
+    p{
+      color:$primary;
+    }
   }
 
   .target{
