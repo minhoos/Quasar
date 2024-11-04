@@ -58,16 +58,20 @@
           <h5 class="text-h5">신규 고객사</h5>
           <q-separator class="q-my-md"/>
           <div class="row q-col-gutter-y-md q-col-gutter-x-xl q-mt-xs">
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"  v-for="list in 3" :key="list">
+            <div class="col-sm-6 col-md-6 col-lg-4"  v-for="list in 3" :key="list">
               <q-card class="count-card text-left q-pa-md flex column shadow-all">
                 <div class="flex justify-center items-center q-gutter-md">
                   <img class="content_logo" src="https://nlobby.com/theme/basic/img/nlobby/logo.png" alt="Logo">
                   <div class="flex column q-gutter-sm">
                     <h4 class="text-subtitle2">
                       텐엑스타워<br>
-                      <span class="text-body2 q-mt-sm q-pa-xs inline-block bg-primary text-white rounded-borders">클라우드</span>
                     </h4>
-                    <p class="text-body2 text-black" style="font-weight:200;">
+                    <div class="flex" style="gap:8px;">
+                      <span class="text-body2 q-mt-sm q-pa-xs inline-block bg-primary text-white rounded-borders">클라우드</span>
+                      <span class="text-body2 q-mt-sm q-pa-xs inline-block bg-primary text-white rounded-borders">멀티로케이션</span>
+                      <span class="text-body2 q-mt-sm q-pa-xs inline-block bg-primary text-white rounded-borders">싱글로케이션</span>
+                    </div>
+                    <p class="text-body2 q-mt-md" style="font-weight:200;">
                       2024. 11. 04 등록
                     </p>
                   </div>
@@ -87,10 +91,40 @@
                   <div class="flex column q-gutter-sm">
                     <h4 class="text-subtitle2">
                       한국로봇산업진흥원<br>
-                      <span class="text-body2 q-mt-sm q-pa-xs inline-block bg-primary text-white rounded-borders">클라우드</span>
                     </h4>
-                    <p class="text-body2 text-black" style="font-weight:200;">
+                    <div class="flex" style="gap:8px;">
+                      <span class="text-body2 q-mt-sm q-pa-xs inline-block bg-primary text-white rounded-borders">클라우드</span>
+                      <span class="text-body2 q-mt-sm q-pa-xs inline-block bg-primary text-white rounded-borders">멀티로케이션</span>
+                      <span class="text-body2 q-mt-sm q-pa-xs inline-block bg-primary text-white rounded-borders">싱글로케이션</span>
+                    </div>
+                    <p class="text-body2 q-mt-md" style="font-weight:200;">
                       2024. 11. 04 종료예정
+                    </p>
+                  </div>
+                </div>
+              </q-card>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h5 class="text-h5">계약 종료 고객사</h5>
+          <q-separator class="q-my-md"/>
+          <div class="row q-col-gutter-y-md q-col-gutter-x-xl q-mt-xs">
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"  v-for="list in 3" :key="list">
+              <q-card class="count-card text-left q-pa-md flex column shadow-all">
+                <div class="flex justify-center items-center q-gutter-md">
+                  <img class="content_logo" src="https://nlobby.com/theme/basic/img/nlobby/logo.png" alt="Logo">
+                  <div class="flex column q-gutter-sm">
+                    <h4 class="text-subtitle2">
+                      한국로봇산업진흥원<br>
+                    </h4>
+                    <div class="flex" style="gap:8px;">
+                      <span class="text-body2 q-mt-sm q-pa-xs inline-block bg-primary text-white rounded-borders">클라우드</span>
+                      <span class="text-body2 q-mt-sm q-pa-xs inline-block bg-primary text-white rounded-borders">멀티로케이션</span>
+                      <span class="text-body2 q-mt-sm q-pa-xs inline-block bg-primary text-white rounded-borders">싱글로케이션</span>
+                    </div>
+                    <p class="text-body2 q-mt-md" style="font-weight:200;">
+                      2024. 11. 04 종료
                     </p>
                   </div>
                 </div>
@@ -153,10 +187,6 @@
     gap:16px;
     .content_logo{
       width:100px;
-    }
-
-    p{
-      color:$primary;
     }
   }
 
