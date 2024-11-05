@@ -1,6 +1,6 @@
 <template>
   <q-drawer v-model="drawer" show-if-above :width="335" :breakpoint=0
-    style="padding:8px;" :style="$q.dark.isActive ? 'border-right:1px solid rgba(38, 38, 38, 1)' : 'border-right:1px solid rgba(219, 219, 219, 1)'">
+    style="padding:8px;" :style="$q.dark.isActive ? 'border-right:1px solid rgba(38, 38, 38, 1); background:#121212' : 'border-right:1px solid rgba(219, 219, 219, 1)'">
     <div style="height:92px;" class="q-mt-md">
       <a href=" /" class="row justify-center items-center no-wrap cursor-pointer q-px-sm q-py-md">
         <img class="doc-header__logo-text" src="https://nlobby.com/theme/basic/img/nlobby/logo.png" alt="nlobby Logo">
@@ -69,7 +69,7 @@
     <div>
     <!-- <q-separator class="q-my-xs"/> -->
       <q-btn flat class="bottom-menu q-py-sm q-px-md full-width justify-center items-start" align="left">
-        <q-img src="@assets/profile.jpg" style="width:24px; height:24px; margin-right:8px;"/> 프로필
+        <q-img src="@assets/profile.jpg" style="border-radius:16px; width:24px; height:24px; margin-right:8px;"/> 프로필
       </q-btn>
 
       <q-btn flat class="bottom-menu q-py-sm q-px-md full-width" align="left">
@@ -84,18 +84,21 @@
         <span class="q-ml-sm">더 보기</span>
         <q-menu fit anchor="top end" self="bottom end" class="q-pa-sm shadow-all" style="border-radius:8px;">
           <q-list>
-            <q-item clickable v-ripple @click.prevent="toggleDarkMode" class="full-width flex justify-between items-center q-px-md q-py-xs" style="border-radius:8px; font-weight:300; min-height:48px;">
-              <span class="flex items-center" style="gap:16px;">
-                <q-icon name="mdi-logout" size="2.4rem" />
-                로그아웃
-              </span>
-            </q-item>
+            <h4 class="text-h6 q-mx-md q-my-lg">이민호</h4>
+            <q-separator class="q-my-sm"/>
             <q-item clickable v-ripple @click.prevent="toggleDarkMode" class="full-width flex justify-between items-center q-px-md q-py-xs" style="border-radius:8px; font-weight:300; min-height:48px;">
               <span class="flex items-center" style="gap:16px;">
                 <q-icon :name="darkMode ? 'dark_mode' : 'light_mode'" size="2.4rem" />
                 다크모드
               </span>
               <q-toggle v-model="darkMode"/>
+            </q-item>
+
+            <q-item clickable v-ripple class="full-width flex justify-between items-center q-px-md q-py-xs" style="border-radius:8px; font-weight:300; min-height:48px;">
+              <span class="flex items-center" style="gap:16px;">
+                <q-icon name="mdi-logout" size="2.4rem" />
+                로그아웃
+              </span>
             </q-item>
           </q-list>
         </q-menu>
