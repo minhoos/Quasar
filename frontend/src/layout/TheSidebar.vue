@@ -84,8 +84,8 @@
         <span class="q-ml-sm">더 보기</span>
         <q-menu fit anchor="top end" self="bottom end" class="q-pa-sm shadow-all" style="border-radius:8px;">
           <q-list>
-            <h4 class="text-h6 q-ma-sm">이민호</h4>
-            <q-separator class="q-my-md"/>
+            <h4 class="text-h6 q-mx-md q-my-lg">이민호</h4>
+            <q-separator class="q-my-sm"/>
             <q-item clickable v-ripple @click.prevent="toggleDarkMode" class="full-width flex justify-between items-center q-px-md q-py-xs" style="border-radius:8px; font-weight:300; min-height:48px;">
               <span class="flex items-center" style="gap:16px;">
                 <q-icon :name="darkMode ? 'dark_mode' : 'light_mode'" size="2.4rem" />
