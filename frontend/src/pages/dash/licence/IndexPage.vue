@@ -41,6 +41,20 @@
       </div>
     </section>
     <section class="q-mt-xl">
+      <q-tabs
+        class="q-mb-lg"
+        v-model="tab"
+        inline-label
+        switch-indicator
+        indicator-color="primary"
+      >
+        <q-route-tab icon="mdi-pencil-outline" to="/dash/licence" label="게시글" exact class="page-tab-menu" />
+        <q-route-tab icon="bookmark_border" to="/dash/licence/save" label="저장됨" exact class="page-tab-menu" />
+        <q-route-tab icon="mdi-tag-outline" to="/dash/licence/tag" label="태그됨" exact class="page-tab-menu" />
+      </q-tabs>
+      <router-view/>
+    </section>
+    <!-- <section class="q-mt-xl">
       <div class="row q-col-gutter-md">
         <div v-for="list in 18" :key="list" class="col-12 col-sm-6 col-md-4 col-lg-3">
           <q-card class="my-card">
@@ -52,16 +66,19 @@
           </q-card>
         </div>
       </div>
-
-
-    </section>
+    </section> -->
   </div>
 </template>
 
 <script setup>
-
+  import { ref } from 'vue';
+  const tab = ref('board');
 </script>
 
 <style lang="scss" scoped>
-
+  .page-tab-menu{
+    *{
+      font-weight:200;
+    }
+  }
 </style>

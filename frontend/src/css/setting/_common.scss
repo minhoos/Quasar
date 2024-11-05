@@ -24,4 +24,9 @@ body {
   .bg-grey6 {
     background: var(--common-grey6);
   }
+
+
+  .shadow-all {
+    box-shadow: $shadow-common;
+  }
 }

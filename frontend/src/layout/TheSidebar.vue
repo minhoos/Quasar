@@ -6,7 +6,7 @@
         <img class="doc-header__logo-text" src="https://nlobby.com/theme/basic/img/nlobby/logo.png" alt="nlobby Logo">
       </a>
     </div>
-    <q-scroll-area style="height: calc(100% - 170px);">
+    <q-scroll-area style="height: calc(100% - 210px);">
       <q-list padding>
         <q-item clickable v-ripple class="side-menu" active-class="text-primary" to="/dash/home">
           <!-- <q-item-section avatar>
@@ -66,28 +66,41 @@
         </q-item> -->
       </q-list>
     </q-scroll-area>
-    <q-btn flat class="bottom-menu q-py-sm q-px-md full-width" align="left">
-      <svg aria-label="설정" class="" height="24" role="img" viewBox="0 0 24 24" width="24">
-        <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          x1="3" x2="21" y1="4" y2="4"></line>
-        <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          x1="3" x2="21" y1="12" y2="12"></line>
-        <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          x1="3" x2="21" y1="20" y2="20"></line>
-      </svg>
-      <span class="q-ml-sm">더 보기</span>
-      <q-menu fit anchor="top end" self="bottom end" class="q-pa-sm shadow-all" style="border-radius:8px;">
-        <q-list>
-          <q-item clickable v-ripple @click.prevent="toggleDarkMode" class="full-width flex justify-between items-center q-px-md q-py-xs" style="border-radius:8px; font-weight:300; min-height:48px;">
-            <span class="flex items-center" style="gap:16px;">
-              <q-icon :name="darkMode ? 'dark_mode' : 'light_mode'" size="2.4rem" />
-              다크모드
-            </span>
-            <q-toggle v-model="darkMode"/>
-          </q-item>
-        </q-list>
-      </q-menu>
-    </q-btn>
+    <div>
+    <!-- <q-separator class="q-my-xs"/> -->
+      <q-btn flat class="bottom-menu q-py-sm q-px-md full-width justify-center items-start" align="left">
+        <q-img src="@assets/profile.jpg" style="width:24px; height:24px; margin-right:8px;"/> 프로필
+      </q-btn>
+
+      <q-btn flat class="bottom-menu q-py-sm q-px-md full-width" align="left">
+        <svg aria-label="설정" class="" height="24" role="img" viewBox="0 0 24 24" width="24">
+          <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            x1="3" x2="21" y1="4" y2="4"></line>
+          <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            x1="3" x2="21" y1="12" y2="12"></line>
+          <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            x1="3" x2="21" y1="20" y2="20"></line>
+        </svg>
+        <span class="q-ml-sm">더 보기</span>
+        <q-menu fit anchor="top end" self="bottom end" class="q-pa-sm shadow-all" style="border-radius:8px;">
+          <q-list>
+            <q-item clickable v-ripple @click.prevent="toggleDarkMode" class="full-width flex justify-between items-center q-px-md q-py-xs" style="border-radius:8px; font-weight:300; min-height:48px;">
+              <span class="flex items-center" style="gap:16px;">
+                <q-icon name="mdi-logout" size="2.4rem" />
+                로그아웃
+              </span>
+            </q-item>
+            <q-item clickable v-ripple @click.prevent="toggleDarkMode" class="full-width flex justify-between items-center q-px-md q-py-xs" style="border-radius:8px; font-weight:300; min-height:48px;">
+              <span class="flex items-center" style="gap:16px;">
+                <q-icon :name="darkMode ? 'dark_mode' : 'light_mode'" size="2.4rem" />
+                다크모드
+              </span>
+              <q-toggle v-model="darkMode"/>
+            </q-item>
+          </q-list>
+        </q-menu>
+      </q-btn>
+    </div>
   </q-drawer>
 </template>
 

@@ -41,6 +41,23 @@ const routes = [
         path: 'licence',
         name: '라이선스 관리',
         component: () => import('pages/dash/licence/IndexPage.vue'),
+        children: [
+          {
+            path: '',
+            name: '게시글',
+            component: () => import('pages/dash/licence/ProfilePage.vue'),
+          },
+          {
+            path: 'save',
+            name: '저장됨',
+            component: () => import('pages/dash/licence/ProfileSaved.vue'),
+          },
+          {
+            path: 'tag',
+            name: '태그됨',
+            component: () => import('pages/dash/licence/ProfileToggled.vue'),
+          },
+        ],
       },
     ],
   },
