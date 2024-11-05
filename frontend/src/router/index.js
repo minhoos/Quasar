@@ -2,13 +2,25 @@ import { createWebHashHistory, createRouter } from 'vue-router'
 // createWebHistory, createMemoryHistory
 
 import DashPage from 'pages/dash/IndexPage.vue'
-import LoginPage from "pages/login/IndexPage.vue";
+import AuthPage from "pages/auth/IndexPage.vue";
 
 const routes = [
   {
-    path: '/login',
-    name: 'login',
-    component: LoginPage,
+    path: '/auth',
+    redirect: '/auth/login',
+    component: AuthPage,
+    children: [
+      {
+        path: 'login',
+        name: '로그인',
+        component: () => import('pages/auth/login/IndexPage.vue'),
+      },
+      {
+        path: 'password',
+        name: '비밀번호 변경',
+        component: () => import('pages/auth/password/IndexPage.vue'),
+      },
+    ],
   },
   {
     path: '/dash',
