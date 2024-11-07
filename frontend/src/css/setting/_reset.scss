@@ -12,6 +12,12 @@ html {
   body {
     letter-spacing: -0.6px;
     font-weight:200;
+
+    .form-control {
+      * {
+        font-weight: 200;
+      }
+    }
   }
 
   * {

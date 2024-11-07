@@ -59,6 +59,11 @@ const routes = [
           },
         ],
       },
+      {
+        path: 'config',
+        name: '환경설정',
+        component: () => import('pages/dash/config/IndexPage.vue'),
+      },
     ],
   },
 ];

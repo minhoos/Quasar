@@ -27,9 +27,7 @@ module.exports = configure(function (/* ctx */) {
     ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
-    css: [
-      'app.scss',
-    ],
+    css: ['app.scss'],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
@@ -47,6 +45,13 @@ module.exports = configure(function (/* ctx */) {
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#build
     build: {
+      extendWebpack(cfg) {
+        // MiniCssExtractPlugin 비활성화
+        cfg.plugins = cfg.plugins.filter(
+          plugin => plugin.constructor.name !== 'MiniCssExtractPlugin',
+        );
+      },
+
       alias: {
         layout: path.join(__dirname, './src/layout'),
         css: path.join(__dirname, './src/css'),

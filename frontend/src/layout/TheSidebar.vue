@@ -27,15 +27,15 @@
             <!-- <q-item-section avatar>
             <q-icon name="star" />
             </q-item-section> -->
-          <svg aria-label="홈" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" role="img" viewBox="0 0 24 24"
+          <svg aria-label="고객사 관리" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" role="img" viewBox="0 0 24 24"
             width="20" height="20">
-            <title>홈</title>
+            <title>고객사 관리</title>
             <path
               d="M22 23h-6.001a1 1 0 0 1-1-1v-5.455a2.997 2.997 0 1 0-5.993 0V22a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V11.543a1.002 1.002 0 0 1 .31-.724l10-9.543a1.001 1.001 0 0 1 1.38 0l10 9.543a1.002 1.002 0 0 1 .31.724V22a1 1 0 0 1-1 1Z">
             </path>
           </svg>
           <q-item-section>
-            고객사관리
+            고객사 관리
           </q-item-section>
         </q-item>
 
@@ -43,15 +43,30 @@
           <!-- <q-item-section avatar>
             <q-icon name="send" />
           </q-item-section> -->
-          <svg aria-label="홈" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" role="img" viewBox="0 0 24 24"
+          <svg aria-label="서비스 운영" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" role="img" viewBox="0 0 24 24"
             width="20" height="20">
-            <title>홈</title>
+            <title>서비스 운영</title>
             <path
               d="M22 23h-6.001a1 1 0 0 1-1-1v-5.455a2.997 2.997 0 1 0-5.993 0V22a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V11.543a1.002 1.002 0 0 1 .31-.724l10-9.543a1.001 1.001 0 0 1 1.38 0l10 9.543a1.002 1.002 0 0 1 .31.724V22a1 1 0 0 1-1 1Z">
             </path>
           </svg>
           <q-item-section>
             라이센스 관리
+          </q-item-section>
+        </q-item>
+        <q-item clickable v-ripple class="side-menu" active-class="text-primary" to="/dash/config">
+          <!-- <q-item-section avatar>
+            <q-icon name="send" />
+          </q-item-section> -->
+          <svg aria-label="환경설정" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" role="img" viewBox="0 0 24 24"
+            width="20" height="20">
+            <title>환경설정</title>
+            <path
+              d="M22 23h-6.001a1 1 0 0 1-1-1v-5.455a2.997 2.997 0 1 0-5.993 0V22a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V11.543a1.002 1.002 0 0 1 .31-.724l10-9.543a1.001 1.001 0 0 1 1.38 0l10 9.543a1.002 1.002 0 0 1 .31.724V22a1 1 0 0 1-1 1Z">
+            </path>
+          </svg>
+          <q-item-section>
+            환경설정
           </q-item-section>
         </q-item>
 

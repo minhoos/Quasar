@@ -28,9 +28,5 @@
 </script>
 
 <style lang="scss" scoped>
-  .form-control{
-    * {
-      font-weight:200;
-    }
-  }
+
 </style>
