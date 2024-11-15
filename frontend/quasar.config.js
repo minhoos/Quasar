@@ -22,6 +22,7 @@ module.exports = configure(function (/* ctx */) {
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
     boot: [
+      'notify',
       'initialization',
       // 'brand-colors'
     ],
@@ -46,6 +47,16 @@ module.exports = configure(function (/* ctx */) {
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#build
     build: {
       extendWebpack(cfg) {
+        cfg.module.rules = cfg.module.rules.filter(rule => {
+          return !rule.test || !rule.test.toString().includes('svg');
+        });
+
+        cfg.module.rules.push({
+          test: /\.svg$/,
+          loader: 'vue-svg-loader',
+        });
+
+
         // MiniCssExtractPlugin 비활성화
         cfg.plugins = cfg.plugins.filter(
           plugin => plugin.constructor.name !== 'MiniCssExtractPlugin',
@@ -55,8 +66,12 @@ module.exports = configure(function (/* ctx */) {
       alias: {
         layout: path.join(__dirname, './src/layout'),
         css: path.join(__dirname, './src/css'),
+        '@': path.join(__dirname, './src'),
+        '@icons': path.join(__dirname, '/public/icons/custom'),
         '@assets': path.join(__dirname, './src/assets'),
+        '@components': path.join(__dirname, './src/components'),
       },
+
       target: {
         browser: ['es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1'],
         node: 'node20',

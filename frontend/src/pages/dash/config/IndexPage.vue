@@ -37,6 +37,10 @@
           </template>
         </q-input>
         <q-toggle :false-value="false" :true-value="true" label="2차인증 사용" v-model="form.otpCode"/>
+        <div class="q-gutter-x-sm">
+          <q-btn label="등록" flat class="bg-primary text-weight-regular" size="1.6rem" color="white" type="submit" />
+          <q-btn label="초기화" outline class="bg-white text-weight-regular" size="1.6rem" color="primary" type="reset"/>
+        </div>
       </q-form>
     </section>
 
@@ -46,6 +50,33 @@
 
 <script setup>
   import {ref} from 'vue'
+  // we import all of `date`
+  import { date, is, dom } from 'quasar'
+  // destructuring to keep only what is needed
+  const { formatDate, addToDate, subtractFromDate } = date;
+  const { deepEqual } = is;
+  const { offset } = dom
+  const format = "YYYY-MM-DD HH:mm:ss";
+
+  const newDate = formatDate(new Date())
+  const addDate = formatDate(addToDate(new Date(), { days: 7, months: 1 }))
+  // const newDate = formatDate({ year: 2010, date: 5, hours: 15, milliseconds: 123 }, format)
+  const subtractDate = formatDate(subtractFromDate(new Date, { hours: 24, milliseconds: 10000 }), format)
+
+  console.log(newDate);
+  console.log(addDate);
+  console.log(subtractDate);
+  // console.log(newDate);
+
+
+  const objA = {name:'abc', age:30}
+  const objB = { name: 'abc', age: 30 }
+
+  console.log(objA === objB);
+  console.log(deepEqual(objA, objB));
+
+  const el = document.querySelector('body');
+  console.log(dom.offset(el));
 
   const form = ref({
     title:'',
@@ -77,6 +108,7 @@
       value:'오라클',
     },
   ]);
+
 </script>
 
 <style lang="scss" scoped>

@@ -12,8 +12,8 @@
 // to match your app's branding.
 // Tip: ;Use the "Theme Builder" on Quasar's documentation website.
 
-// 퀘이사에서 기본적으로 지정되어 있는 값을 여기서 바꿔서 적용할 수 있음.
-// 즉, 예전 방식이었던 reset.scss처럼 따로 만들어서 작업 할 필요 없이 이 파일안에서 퀘이사 변수를 가져와서 새로 지정해주면 지정된 값으로 대체 가능, 하지만 최소한의 초기설정은 필요함 (ex : html > font-size:62.5%, body > font-size:1.6rem, letter-spacing:-0.6px;)
+// 퀘이사에서 기본으로 지정되어 있는 값을 여기서 바꿔서 적용할 수 있음.
+// 즉, 예전에는 reset.scss처럼 따로 만들어서 작업 할 필요 없이 이 파일안에서 퀘이사 변수를 가져와서 새로 적용해주면 지정된 값으로 대체 가능, 하지만 최소한의 초기설정은 필요함 (ex : html > font-size:62.5%, body > font-size:1.6rem, letter-spacing:-0.6px;)
 
 @charset "UTF-8";
 
@@ -37,7 +37,7 @@ $typography-font-family:'NanumSquareNeo';
 
 $h1:        (size: 6rem,     line-height: 6rem,      weight: 300);
 $h2:        (size: 3.6rem,  line-height: 3.6rem,   weight: 300);
-$h3:        (size: 3.2rem,     line-height: 3.2rem,    weight: 400);
+$h3:        (size: 3.2rem,     line-height: 3.2rem,    weight: 500);
 $h4:        (size: 2.8rem, line-height: 2.5rem,    weight: 400);
 $h5:        (size: 2.4rem,   line-height: 2rem,        weight: 400);
 $h6:        (size: 2.0rem,  line-height: 2rem,       weight: 400);
@@ -53,10 +53,18 @@ $shadow-common : 0 4px 12px rgba(18, 18, 18, .15);
 $black:#181818;
 
 // text-weight
-$text-weights: (
-  // thin: 100,
-  light: 100,
-  regular: 200,
-  medium: 300,
-  bold: 400,
-  bolder: 500) !default
+$text-weights:        (light:100,regular:200,medium:300,bold:400,bolder:500) !default;
+
+// button radius default
+$button-border-radius: 8px !default;
+
+// table
+$table-border-radius:              16px !default;
+$table-th-font-size :                1.6rem !default;
+$table-tbody-td-font-size:      1.4rem!default;
+$table-title-font-size:              2.0rem !default;
+$table-bottom-font-size:         1.4rem !default;
+$table-sort-icon-font-size:       2.0rem !default;
+
+// border-radius 공통
+// $generic-border-radius : 4px !default

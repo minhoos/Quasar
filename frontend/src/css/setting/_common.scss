@@ -29,4 +29,15 @@ body {
   .shadow-all {
     box-shadow: $shadow-common;
   }
+
+/* 숫자 증감 버튼을 숨기기 위한 CSS */
+  .no-spin input[type="number"]::-webkit-outer-spin-button,
+  .no-spin input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .no-spin input[type="number"] {
+    -moz-appearance: textfield;
+  }
 }

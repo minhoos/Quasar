@@ -4,7 +4,7 @@
     <section class="row q-col-gutter-x-xl q-py-md flex flex-center">
       <div class="col-auto q-py-md">
         <q-avatar size="150px">
-          <q-img src="@assets/logo.jpg" />
+          <!-- <q-img src="@assets/logo.jpg" /> -->
         </q-avatar>
       </div>
       <div class="col-12 col-sm-grow column justify-between q-gutter-y-md">
@@ -33,7 +33,7 @@
         <div class="col-auto" v-for="list in 15" :key="list">
           <article>
             <q-avatar size="70px">
-              <q-img src="@assets/logo.jpg" />
+              <!-- <q-img src="@assets/logo.jpg" /> -->
             </q-avatar>
             <div class="text-center q-mt-sm">제목</div>
           </article>
@@ -48,9 +48,9 @@
         switch-indicator
         indicator-color="primary"
       >
-        <q-route-tab icon="mdi-pencil-outline" to="/dash/licence" label="게시글" exact class="page-tab-menu" />
-        <q-route-tab icon="bookmark_border" to="/dash/licence/save" label="저장됨" exact class="page-tab-menu" />
-        <q-route-tab icon="mdi-tag-outline" to="/dash/licence/tag" label="태그됨" exact class="page-tab-menu" />
+        <q-route-tab icon="mdi-pencil-outline" to="/dash/license" label="게시글" exact class="page-tab-menu" />
+        <q-route-tab icon="bookmark_border" to="/dash/license/save" label="저장됨" exact class="page-tab-menu" />
+        <q-route-tab icon="mdi-tag-outline" to="/dash/license/tag" label="태그됨" exact class="page-tab-menu" />
       </q-tabs>
       <router-view/>
     </section>
