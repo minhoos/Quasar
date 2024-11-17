@@ -50,13 +50,15 @@ $caption:   (size: 1.2rem,   line-height: 1.25rem,   weight: 400);
 
 // shadow
 $shadow-common : 0 4px 12px rgba(18, 18, 18, .15);
-$black:#181818;
+$black:#181818 !default;
 
 // text-weight
 $text-weights:        (light:100,regular:200,medium:300,bold:400,bolder:500) !default;
 
 // button radius default
-$button-border-radius: 8px !default;
+$button-border-radius:         8px !default;
+$button-font-weight:        300 !default;
+$button-font-size : 14px !default;
 
 // table
 $table-border-radius:              16px !default;

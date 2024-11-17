@@ -41,3 +41,62 @@ body {
     -moz-appearance: textfield;
   }
 }
+
+
+.mynotification{
+  transition: 0.2s ease all;
+}
+
+table{
+  .table-header{
+    th{
+      color:var(--common-black);
+      background:var(--common-grey1) !important;
+    }
+  }
+
+  td{
+    background: var(--common-white);
+    color:var(--common-black);
+  }
+}
+
+
+.table-host-users{
+  // 테이블 좌우 스크롤시 좌측 3개 셀 고정
+  td:first-child,
+  th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--common-white);
+  }
+
+  td:nth-child(2),
+  th:nth-child(2) {
+    position: sticky;
+    left: 72px;
+    z-index: 1;
+    background: var(--common-white);
+  }
+
+  td:nth-child(3),
+  th:nth-child(3) {
+    position: sticky;
+    left: 144px;
+    z-index: 1;
+    background: var(--common-white);
+  }
+
+  // 테이블 우측 마지막 셀 고정
+  th:last-child,
+  td:last-child {
+    position: sticky;
+    right: 0;
+    z-index: 1;
+  }
+
+  td:last-child {
+    background: var(--common-white);
+  }
+}

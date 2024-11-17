@@ -56,7 +56,6 @@ module.exports = configure(function (/* ctx */) {
           loader: 'vue-svg-loader',
         });
 
-
         // MiniCssExtractPlugin 비활성화
         cfg.plugins = cfg.plugins.filter(
           plugin => plugin.constructor.name !== 'MiniCssExtractPlugin',
@@ -136,7 +135,7 @@ module.exports = configure(function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: ['LocalStorage', 'SessionStorage'],
+      plugins: ['LocalStorage', 'SessionStorage', 'Notify'],
     },
 
     // animations: 'all', // --- includes all animations
