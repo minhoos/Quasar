@@ -80,7 +80,6 @@
       <!-- <q-btn flat class="bottom-menu q-py-sm q-px-md full-width justify-center items-start" align="left">
         <q-img src="@assets/profile.jpg" style="border-radius:16px; width:24px; height:24px; margin-right:8px;"/> 프로필
       </q-btn> -->
-
       <q-btn flat class="bottom-menu q-py-sm q-px-md full-width" align="left">
         <svg aria-label="설정" class="" height="24" role="img" viewBox="0 0 24 24" width="24">
           <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -109,6 +108,20 @@
                 로그아웃
               </span>
             </q-item>
+            <q-item class="full-width flex justify-between items-center q-px-md q-py-xs" style="border-radius:8px; font-weight:300; min-height:48px;">
+              <q-select
+                v-model="lang"
+                :options="langOptions"
+                label="언어선택"
+                emit-value
+              >
+              <!-- {{ lang }} -->
+              </q-select>
+              <!-- <span class="flex items-center" style="gap:16px;">
+                <q-icon name="mdi-logout" size="2.4rem" />
+                언어선택 {{ langOptions }}
+              </span> -->
+            </q-item>
           </q-list>
         </q-menu>
       </q-btn>
@@ -116,8 +129,21 @@
   </q-drawer>
 </template>
 
+<!-- 반응형 데이터가 아닌 일반 데이터를 가져와야 할 경우 사용 -->
+<script>
+  import languages from 'quasar/lang/index.json'
+  
+  const appLanguages = languages.filter(lang => ['ko-KR', 'en-US'].includes(lang.isoName))
+
+  const langOptions = appLanguages.map(lang => ({
+    label: lang.nativeName,
+    value : lang.isoName
+  }))
+
+</script>
+
 <script setup>
-  import { ref, watch, computed } from 'vue'
+  import { ref, watch, computed, watchEffect } from 'vue'
   // import { getCurrentInstance } from 'vue';
   import { useQuasar, LocalStorage, SessionStorage } from 'quasar';
   import NavLicense from '/icons/custom/NavLicense.svg';
@@ -126,10 +152,22 @@
 
   // const { proxy } = getCurrentInstance()
   const $q = useQuasar(); // Vue HTML 코드와 헷갈리지 않기 위해 똑같이 통일 바꿔도 상관없음
-  
   const drawer = ref(false);
-  // const darkMode = ref(false);
-  // const initDarkMode = LocalStorage.getItem('darkMode');
+
+  const lang = ref($q.lang.isoName);
+
+  watchEffect(
+    (lang, val => {
+      import(`../../node_modules/quasar/lang/${lang.value}`).then(lang => {
+        $q.lang.set(lang.default)
+        $q.localStorage.set('lang', lang.default.isoName)
+      })
+    }),
+  )
+
+// 다크모드
+// const darkMode = ref(false);
+// const initDarkMode = LocalStorage.getItem('darkMode');
 
 //   const darkModeIcon = computed(() => {
 //     return $q.dark.isActive ? 'dark_mode' : 'light_mode'

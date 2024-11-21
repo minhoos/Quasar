@@ -1,8 +1,9 @@
 import { createWebHashHistory, createRouter } from 'vue-router'
 // createWebHistory, createMemoryHistory
 
-import DashPage from 'pages/dash/IndexPage.vue'
-import AuthPage from "pages/auth/IndexPage.vue";
+import DashPage from 'pages/dash/LayoutPage.vue'
+import AuthPage from "pages/auth/LayoutPage.vue";
+import { LoadingBar } from "quasar";
 
 const routes = [
   {
@@ -81,6 +82,16 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+})
+
+// 라우터 시작
+router.beforeEach(() => {
+  LoadingBar.start();
+})
+
+// 라우터 종료
+router.beforeEach(() => {
+  LoadingBar.stop();
 })
 
 export default router

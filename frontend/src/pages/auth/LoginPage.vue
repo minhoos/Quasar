@@ -9,9 +9,9 @@
     </q-card-section>
     <q-card-section>
       <div class="row">
-        <div class="full-width q-gutter-y-sm">
+        <div class="full-width q-gutter-y-md">
           <q-input outlined v-model="form.email" label="이메일" type="email" class="form-control" label-color="primary" clearable clear-icon="close" :rules="emailRules" />
-          <q-input outlined v-model="form.password" label="패스워드"  class="form-control" label-color="primary" :type="isPwd ? 'password':'text' " :rules="passwordRules" clearable clear-icon="close">
+          <q-input outlined v-model="form.password" label="패스워드" class="form-control" label-color="primary" :type="isPwd ? 'password':'text' " :rules="passwordRules" clearable clear-icon="close">
             <template v-slot:append>
               <q-icon
               :name="isPwd ? 'visibility_off' : 'visibility'"
@@ -19,7 +19,11 @@
               @click="isPwd = !isPwd"
               />
             </template>
+            <template v-slot:after>
+              <q-btn flat class="bg-primary q-py-md" color="white" @click="isUserCheck">인증번호 입력</q-btn>
+            </template>
           </q-input>
+          <q-input outlined v-model="form.certification" label="2차인증 번호 입력" type="number" class="form-control no-spin" label-color="primary" clearable clear-icon="close"/>
         </div>
         <q-btn label="로그인" flat class="bg-primary full-width text-weight-regular q-mt-md  q-py-md" size="1.6rem" color="white" @click.prevent="isLogin" :disable="!formChecked"/>
       </div>
@@ -34,6 +38,9 @@
 <script setup>
   import { ref, computed } from 'vue'
   import { useRouter, useRoute } from 'vue-router';
+  import { useQuasar } from 'quasar';
+
+  const $q = useQuasar();
 
   const router = useRouter();
 
@@ -60,6 +67,20 @@ const formChecked = computed(() => {
 
   const isLogin = () => {
     router.push('/dash')
+  }
+
+  const isUserCheck = () => {
+    if (form.value.email && form.value.password) {
+      $q.notify({
+        type: 'noti-nlobby',
+        message: '등록된 이메일 주소로 인증번호가 발송되었습니다.'
+      })
+    } else {
+      $q.notify({
+        type: 'negative',
+        message: '아이디 또는 비밀번호가 입력되지 않았습니다.'
+      })
+    }
   }
 
 </script>

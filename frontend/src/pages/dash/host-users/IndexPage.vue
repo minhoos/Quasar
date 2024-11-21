@@ -21,6 +21,20 @@
             </template>
           </q-input>
         </template>
+
+          <!-- 커스텀 테이블(정보수정버튼) -->
+          <template v-slot:body-cell-actions="props">
+            <q-td>
+              <q-btn
+                outline
+                label="정보수정"
+                color="white"
+                textColor="brand-black"
+                @click.prevent="openModal(props.row)"
+              />
+            </q-td>
+          </template>
+
       </q-table>
 
       <!-- 페이징네이션 -->
@@ -35,12 +49,30 @@
       </div>
 
     </section>
+    <UserModal v-model="isModal" @closeModal="closeModal" :selectUserView="selectUserView"></UserModal>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, computed, watchEffect } from 'vue'
+  import { ref, onMounted, computed, watchEffect } from 'vue'
+  import UserModal from './UserModal.vue';
+  
+  // 모달
 
+  const selectUserView = ref({});
+  const isModal = ref(false)
+
+  const openModal = (value) => {
+    selectUserView.value = value;
+    isModal.value = true;
+  };
+
+  const closeModal = () => {
+    isModal.value = false;
+  }
+
+
+  // 테이블
   const columns = [
     {
       name: 'id',
@@ -268,6 +300,7 @@ import { ref, onMounted, computed, watchEffect } from 'vue'
   const pagesNumber = computed(() => {
     return Math.ceil(pagination.value.rowsNumber / pagination.value.rowsPerPage)
   })
+
   const tableRef = ref()  // table 엘리먼트
   const hostUsers = ref([])
   const filter = ref('')
@@ -280,86 +313,86 @@ import { ref, onMounted, computed, watchEffect } from 'vue'
     rowsNumber: 0
   })
 
-    // emulate ajax call
-    // SELECT * FROM ... WHERE...LIMIT...
-    const fetchFromServer = (startRow, count, filter, sortBy, descending) => {
-      const data = filter
-        ? response.filter(row => row.id.includes(filter))
-        : response.slice()
+  // emulate ajax call
+  // SELECT * FROM ... WHERE...LIMIT...
+  const fetchFromServer = (startRow, count, filter, sortBy, descending) => {
+    const data = filter
+      ? response.filter(row => row.id.includes(filter))
+      : response.slice()
 
-      // handle sortBy
-      if (sortBy) {
-        const sortFn = sortBy === 'desc'
-          ? (descending
-            ? (a, b) => (a.id > b.id ? -1 : a.id < b.id ? 1 : 0)
-            : (a, b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0)
-          )
-          : (descending
-            ? (a, b) => (parseFloat(b[sortBy]) - parseFloat(a[sortBy]))
-            : (a, b) => (parseFloat(a[sortBy]) - parseFloat(b[sortBy]))
-          )
-        data.sort(sortFn)
-      }
-
-      return data.slice(startRow, startRow + count)
+    // handle sortBy
+    if (sortBy) {
+      const sortFn = sortBy === 'desc'
+        ? (descending
+          ? (a, b) => (a.id > b.id ? -1 : a.id < b.id ? 1 : 0)
+          : (a, b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0)
+        )
+        : (descending
+          ? (a, b) => (parseFloat(b[sortBy]) - parseFloat(a[sortBy]))
+          : (a, b) => (parseFloat(a[sortBy]) - parseFloat(b[sortBy]))
+        )
+      data.sort(sortFn)
     }
 
-    // emulate 'SELECT count(*) FROM ...WHERE...'
-    const getRowsNumberCount = (filter) => {
-      if (!filter) {
-        return response.length
-      }
-      let count = 0
-      response.forEach(treat => {
-        if (treat.name.includes(filter)) {
-          ++count
-        }
-      })
-      return count
-    }
-
-    const onRequest = (props) => {
-      
-      const { page, rowsPerPage, sortBy, descending } = props.pagination
-      const filter = props.filter
-
-      loading.value = true
-
-      // emulate server
-      setTimeout(() => {
-        // update rowsCount with appropriate value
-        pagination.value.rowsNumber = getRowsNumberCount(filter)
-
-        // get all rows if "All" (0) is selected
-        const fetchCount = rowsPerPage === 0 ? pagination.value.rowsNumber : rowsPerPage
-
-        // calculate starting row of data
-        const startRow = (page - 1) * rowsPerPage
-
-        // fetch data from "server"
-        const returnedData = fetchFromServer(startRow, fetchCount, filter, sortBy, descending)
-        // clear out existing data and add new
-        hostUsers.value.splice(0, hostUsers.value.length, ...returnedData)
-
-        // don't forget to update local pagination object
-        pagination.value.page = page
-        pagination.value.rowsPerPage = rowsPerPage
-        pagination.value.sortBy = sortBy
-        pagination.value.descending = descending
-
-        // ...and turn of loading indicator
-        loading.value = false
-      }, 1500)
-    }
-    const data = ref();
-    watchEffect(
-      () => pagination.value.page,
-      () => onRequest()
-    )
-
-  const onPageChange = () => {
-    console.log(pagination);
+    return data.slice(startRow, startRow + count)
   }
+
+  // emulate 'SELECT count(*) FROM ...WHERE...'
+  const getRowsNumberCount = (filter) => {
+    if (!filter) {
+      return response.length
+    }
+    let count = 0
+    response.forEach(treat => {
+      if (treat.name.includes(filter)) {
+        ++count
+      }
+    })
+    return count
+  }
+
+  const onRequest = (props) => {
+    
+    const { page, rowsPerPage, sortBy, descending } = props.pagination
+    const filter = props.filter
+
+    loading.value = true
+
+    // emulate server
+    setTimeout(() => {
+      // update rowsCount with appropriate value
+      pagination.value.rowsNumber = getRowsNumberCount(filter)
+
+      // get all rows if "All" (0) is selected
+      const fetchCount = rowsPerPage === 0 ? pagination.value.rowsNumber : rowsPerPage
+
+      // calculate starting row of data
+      const startRow = (page - 1) * rowsPerPage
+
+      // fetch data from "server"
+      const returnedData = fetchFromServer(startRow, fetchCount, filter, sortBy, descending)
+      // clear out existing data and add new
+      hostUsers.value.splice(0, hostUsers.value.length, ...returnedData)
+
+      // don't forget to update local pagination object
+      pagination.value.page = page
+      pagination.value.rowsPerPage = rowsPerPage
+      pagination.value.sortBy = sortBy
+      pagination.value.descending = descending
+
+      // ...and turn of loading indicator
+      loading.value = false
+    }, 1500)
+  }
+  const data = ref();
+  watchEffect(
+    () => pagination.value.page,
+    () => onRequest()
+  )
+
+const onPageChange = () => {
+  console.log(pagination);
+}
 
     onMounted(() => {
       // get initial data from server (1st page)

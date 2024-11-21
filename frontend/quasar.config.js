@@ -21,9 +21,15 @@ module.exports = configure(function (/* ctx */) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
+
+    // boot파일 등록 순서
+    // 1. boot폴더 js파일 생성 -> 2. quasar.config.js plugin, boot 등록 -> 3. 불러올 파일에서 import
     boot: [
-      'notify',
-      'initialization',
+      'initialization',         // 다크모드
+      'notify',                   // 노티 팝업
+      'loading-plugins',    // 로딩 컴포넌트
+      'loading-bar-plugins',   // 라우트 로딩 컴포넌트
+      'quasar-lang-pack'
       // 'brand-colors'
     ],
 
@@ -123,6 +129,7 @@ module.exports = configure(function (/* ctx */) {
           bodyClasses: true, // <<< add this
         },
       },
+      lang: 'ko-KR',
 
       // iconSet: 'material-icons', // Quasar icon set
       // lang: 'en-US', // Quasar language pack
@@ -135,7 +142,7 @@ module.exports = configure(function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: ['LocalStorage', 'SessionStorage', 'Notify'],
+      plugins: ['LocalStorage', 'SessionStorage', 'Notify', 'Loading', 'LoadingBar'],
     },
 
     // animations: 'all', // --- includes all animations

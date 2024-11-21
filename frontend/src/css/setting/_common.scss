@@ -1,5 +1,18 @@
-body {
+body.body--light {
+  color: var(--common-black);
+}
 
+body.body--dark {
+  color: var(--common-white);
+  --q-primary: var(--common-positive);
+
+  .text-brand-black {
+    color: var(--common-white);
+  }
+}
+
+
+body {
   header:is(#header) {
     background: #fff;
     padding: 8px 16px;
@@ -40,11 +53,6 @@ body {
   .no-spin input[type="number"] {
     -moz-appearance: textfield;
   }
-}
-
-
-.mynotification{
-  transition: 0.2s ease all;
 }
 
 table{
@@ -99,4 +107,17 @@ table{
   td:last-child {
     background: var(--common-white);
   }
+}
+
+// 여백 커스텀
+.q-field--with-bottom{
+  padding-bottom:0;
+  &.q-field--error{
+    padding-bottom:20px;
+  }
+}
+
+// noti 효과
+.nlobby-custom-transition {
+  transition: 0.2s ease all;
 }

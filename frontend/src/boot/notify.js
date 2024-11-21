@@ -6,6 +6,7 @@ Notify.setDefaults({
   timeout: 5000,
   textColor: 'white',
   actions: [{ icon: 'close', color: 'white' }],
+  classes: 'nlobby-custom-transition'
 });
 
 // 커스텀을 적용한 noti
@@ -22,6 +23,6 @@ Notify.registerType('noti-nlobby', {
   progress: true,
   color: 'primary',
   textColor: 'white',
-  classes: 'glossy',
-  timeout:3000
+  // classes: 'glossy',
+  timeout: 5000,
 });
