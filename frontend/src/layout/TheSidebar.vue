@@ -155,15 +155,15 @@
   const drawer = ref(false);
 
   const lang = ref($q.lang.isoName);
-
-  watchEffect(
-    (lang, val => {
-      import(`../../node_modules/quasar/lang/${lang.value}`).then(lang => {
-        $q.lang.set(lang.default)
-        $q.localStorage.set('lang', lang.default.isoName)
-      })
-    }),
-  )
+  // 언어선택
+  // watchEffect(
+  //   (lang, val => {
+  //     import(`../../node_modules/quasar/lang/${lang.value}`).then(lang => {
+  //       $q.lang.set(lang.default)
+  //       $q.localStorage.set('lang', lang.default.isoName)
+  //     })
+  //   }),
+  // )
 
 // 다크모드
 // const darkMode = ref(false);
