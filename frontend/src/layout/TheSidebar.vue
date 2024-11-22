@@ -12,12 +12,13 @@
           <!-- <q-item-section avatar>
             <q-icon name="inbox" />
           </q-item-section> -->
-          <svg aria-label="대시보드" class="" fill="currentColor" role="img" viewBox="0 0 24 24" width="20" height="20">
+          <q-icon name="las la-home" size="2.6rem"></q-icon>
+          <!-- <svg aria-label="대시보드" class="" fill="currentColor" role="img" viewBox="0 0 24 24" width="20" height="20">
             <title>대시보드</title>
             <path
               d="M22 23h-6.001a1 1 0 0 1-1-1v-5.455a2.997 2.997 0 1 0-5.993 0V22a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V11.543a1.002 1.002 0 0 1 .31-.724l10-9.543a1.001 1.001 0 0 1 1.38 0l10 9.543a1.002 1.002 0 0 1 .31.724V22a1 1 0 0 1-1 1Z">
             </path>
-          </svg>
+          </svg> -->
           <q-item-section>
             대시보드
           </q-item-section>
@@ -27,13 +28,7 @@
             <!-- <q-item-section avatar>
             <q-icon name="star" />
             </q-item-section> -->
-          <svg aria-label="고객사 관리" fill="currentColor" role="img" viewBox="0 0 24 24"
-            width="20" height="20">
-            <title>고객사 관리</title>
-            <path
-              d="M22 23h-6.001a1 1 0 0 1-1-1v-5.455a2.997 2.997 0 1 0-5.993 0V22a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V11.543a1.002 1.002 0 0 1 .31-.724l10-9.543a1.001 1.001 0 0 1 1.38 0l10 9.543a1.002 1.002 0 0 1 .31.724V22a1 1 0 0 1-1 1Z">
-            </path>
-          </svg>
+          <q-icon name="las la-list" size="2.6rem"></q-icon>
           <q-item-section>
             고객사 관리
           </q-item-section>
@@ -61,14 +56,8 @@
         </q-item>
 
         <q-item clickable v-ripple class="side-menu" active-class="text-primary" to="/dash/host-users">
-          <svg aria-label="사용자 관리" fill="currentColor" role="img" viewBox="0 0 24 24"
-            width="20" height="20">
-            <title>사용자 관리</title>
-            <path
-              d="M22 23h-6.001a1 1 0 0 1-1-1v-5.455a2.997 2.997 0 1 0-5.993 0V22a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V11.543a1.002 1.002 0 0 1 .31-.724l10-9.543a1.001 1.001 0 0 1 1.38 0l10 9.543a1.002 1.002 0 0 1 .31.724V22a1 1 0 0 1-1 1Z">
-            </path>
-          </svg>
-
+          <q-icon name="la la-id-card" size="2.6rem"></q-icon>
+          <!-- <q-icon name="las la-home" size="2.6rem"></q-icon> -->
           <q-item-section>
             사용자 관리
           </q-item-section>
@@ -109,10 +98,14 @@
               </span>
             </q-item>
             <q-item class="full-width flex justify-between items-center q-px-md q-py-xs" style="border-radius:8px; font-weight:300; min-height:48px;">
+              <span class="flex items-center" style="gap:16px;">
+                <q-icon name="mdi-logout" size="2.4rem" />
+                언어선택
+              </span>
+
               <q-select
                 v-model="lang"
                 :options="langOptions"
-                label="언어선택"
                 emit-value
               >
               <!-- {{ lang }} -->

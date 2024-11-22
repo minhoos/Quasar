@@ -12,7 +12,6 @@
           <span class="text-h6 text-weight-bold">nlobby</span>
           <q-space/>
           <div class="q-gutter-x-sm">
-            <q-btn label="프로필 편집"></q-btn>
             <q-btn flat color="brand-black" icon="more_horiz"></q-btn>
           </div>
         </div>

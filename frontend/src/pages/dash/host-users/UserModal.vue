@@ -14,8 +14,8 @@
         <ul class="user-view">
           <li class="flex">
             <!-- <span class="text-body1">이메일</span> -->
-            <q-input>
-            </q-input>
+            <!-- <q-input>
+            </q-input> -->
                           {{ selectUserView.email }}
 
           </li>
