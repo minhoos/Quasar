@@ -29,7 +29,7 @@ module.exports = configure(function (/* ctx */) {
       'notify',                   // 노티 팝업
       'loading-plugins',    // 로딩 컴포넌트
       'loading-bar-plugins',   // 라우트 로딩 컴포넌트
-      'quasar-lang-pack'
+      // 'quasar-lang-pack'
       // 'brand-colors'
     ],
 
